@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link {% block link %}{% endblock link %}>
+    <title>{% block title %}{% endblock title %}</title>
+
+    <style>
+        {% block style %}{% endblock style %}
+
+        *{margin: 0 auto}
+        a:hover{ background-color: #CCCCCC}
+        a{text-decoration: none; color: #4d4d4d;}
+
+        .container{width: 60vw; height: 100%;}
+        .header{
+            font-size: 20px;
+            width: 60vw;
+            line-height: 10vh;
+            border-bottom: 1px #CCCCCC solid;
+            margin-bottom: 20px;
+        }
+
+        .main{height: 80vh;width: 60vw; }
+        .footer{height: 10vh;line-height: 10vh; text-align: center}
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <a href="{{ url_for('index') }}">首页</a>
+        <span>&Iota;</span>
+        <a href="{{ url_for('about_me') }}">关于我</a>
+
+
+    </div>
+    <div class="main">
+        {% block main %}{% endblock main %}
+    </div>
+    <div class="footer">
+        <strong>&copy; 2019 - Arthur Work Sta. | Githab/{% block app %}{% endblock app %} </strong>
+    </div>
+</div>
+
+</body>
+</html>

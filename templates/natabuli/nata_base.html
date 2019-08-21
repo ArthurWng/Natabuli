@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="icon" href="{{ url_for('static', filename='natabuli.jpg') }}">
+    <style>
+        *{margin: 0}
+        .container{background-color: #CCCCCC; width: 80vw; height: 90vw; margin: auto; text-align: center}
+        .header{height:20vw;font-size: xx-large;line-height: 20vw}
+        .main{height: 60vw}
+        .footer{height: 10vw;line-height: 10vw;}
+        {% block style %}{% endblock style %}
+
+
+    </style>
+</head>
+<body>
+<div class="container" id="container">
+    <div class="header" id="header">
+        <h1>Natabuli <sup style="font-size: 25px">&reg;</sup></h1>
+    </div>
+    <div class="main" id="main">{% block main %}{% endblock main %}</div>
+    <div class="footer" id="footer">
+        <strong>&copy; 2019 - Arthur Work Sta. | Githab/Natabuli </strong>
+    </div>
+</div>
+</body>
+</html>

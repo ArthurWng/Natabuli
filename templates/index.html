@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}FLASK项目{% endblock title %}
+{% block link %}rel="icon" href="{{ url_for('static', filename='man.jpg') }}"{% endblock link %}
+
+{% block style %}
+    dd{line-height: 30px; font-size:15px; }
+{% endblock style %}
+
+
+{% block main %}
+    <dl>
+        <dt><h1>项目列表</h1></dt>
+        <br>
+        <dd>
+            <a href="{{ url_for('natabuli') }}"> &rArr; Natabuli项目</a>
+        </dd>
+    </dl>
+
+
+{% endblock main %}
+
+
+{% block app %}Home{% endblock app %}
