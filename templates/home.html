@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}Natabuli-留言板{% endblock title %}
+{% block link %} rel="icon" href="{{ url_for('static', filename='natabuli.jpg') }}"{% endblock link %}
+{% block style %}
+
+.app_name{font-size:20px;}
+
+.form_body{width:59vw; height:200px; padding: 0.5vw; margin-bottom:10px; }
+.form_sign{width:14vw; padding: 0.5vw; margin-bottom:5px;}
+.form_ano{margin-bottom:10px; }
+.form_subbtn{width:15.5vw; padding:0; line-height:2.5vw;background-color: #CCCCCC;}
+
+{% endblock style %}
+
+
+{% block main %}
+    <div class="app_name">
+        <h1>Natabuli <sup>&reg;</sup></h1>
+    </div>
+    <div class="nata">
+        <form method="POST" class="nata_form" >
+            {{ form.csrf_token }}
+            {{ form.body(class_="form_body" ,placeholder="孩子, 说点啥吧...") }}
+            {{ form.name(class_="form_sign",placeholder="留个名撒...")}}
+            <div class="form_ano">{{ form.ano}} 匿名留言</div>
+            {{ form.submit(class_="form_subbtn",value = "提交") }}
+            {{ form.submit.errors[0] }}
+        </form>
+    </div>
+
+
+{% endblock main %}
+
+{% block app %}Natabuli{% endblock app %}
